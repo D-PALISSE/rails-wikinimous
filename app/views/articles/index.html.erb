@@ -1,0 +1,7 @@
+<h1>Articles list :</h1>
+<%= link_to "new article", new_article_path %>
+<% @articles.each do |article| %>
+  <p><%= article.title %></p>
+  <%= link_to "read article", article_path(article) %>
+  <%= link_to "delete article", article_path(article), method: :delete, data: { confirm: "Es-tu sur ... ?" } %>
+<% end %>
